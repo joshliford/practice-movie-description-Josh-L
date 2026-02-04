@@ -1,7 +1,6 @@
 package com.example.practice_movie_description_Josh_L.models;
 
 import jakarta.persistence.*;
-import javafx.scene.text.Text;
 
 @Entity
 @Table(name = "movies")
