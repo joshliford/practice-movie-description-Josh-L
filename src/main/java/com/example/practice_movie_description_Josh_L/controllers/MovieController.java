@@ -36,7 +36,9 @@ public class MovieController {
     @PostMapping
     public Movie addNewMovie(@RequestBody Movie movie) throws HttpException, IOException {
         String description = geminiService.generateMovieDescription(movie.getTitle());
+        double imdbRating = geminiService.generateGeminiRating(movie.getTitle());
         movie.setDescription(description);
+        movie.setImdbRating(imdbRating);
         return movieRepository.save(movie);
     }
 

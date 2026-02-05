@@ -27,4 +27,14 @@ public class GeminiService {
         return response.text();
     }
 
+    public double generateGeminiRating(String title) throws HttpException, IOException {
+        Client client = Client.builder().apiKey(geminiApiKey).build();
+        GenerateContentResponse response = client.models.generateContent(
+                "gemini-2.0-flash-001",
+                "Look at IMDB and ONLY respond with the numerical value of the rating for the movie, " + title + " . Do not return anything else. Ensure the number provided is between 1 and 10",
+                null
+        );
+        return Double.parseDouble(response.text());
+    }
+
 }

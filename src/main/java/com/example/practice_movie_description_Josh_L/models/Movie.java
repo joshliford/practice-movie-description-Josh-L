@@ -14,16 +14,28 @@ public class Movie {
 
     private int rating;
 
+    // AI generated IMDB rating
+    private Double imdbRating;
+
     private String description;
 
     public Movie() {
 
     }
 
-    public Movie(int rating, String title, String description) {
+    public Movie(int rating, Double imdbRating, String title, String description) {
         this.rating = rating;
+        this.imdbRating = imdbRating;
         this.title = title;
         this.description = description;
+    }
+
+    public Double getImdbRating() {
+        return imdbRating;
+    }
+
+    public void setImdbRating(Double imdbRating) {
+        this.imdbRating = imdbRating;
     }
 
     public int getId() {
