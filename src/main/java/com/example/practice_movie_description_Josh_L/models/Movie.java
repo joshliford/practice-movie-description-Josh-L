@@ -17,17 +17,29 @@ public class Movie {
     // AI generated IMDB rating
     private Double imdbRating;
 
+    // AI generated Actor/Actress
+    private String movieLead;
+
     private String description;
 
     public Movie() {
 
     }
 
-    public Movie(int rating, Double imdbRating, String title, String description) {
+    public Movie(int rating, Double imdbRating, String movieLead, String title, String description) {
         this.rating = rating;
         this.imdbRating = imdbRating;
+        this.movieLead = movieLead;
         this.title = title;
         this.description = description;
+    }
+
+    public String getMovieLead() {
+        return movieLead;
+    }
+
+    public void setMovieLead(String movieLead) {
+        this.movieLead = movieLead;
     }
 
     public Double getImdbRating() {

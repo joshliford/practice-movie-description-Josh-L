@@ -37,8 +37,10 @@ public class MovieController {
     public Movie addNewMovie(@RequestBody Movie movie) throws HttpException, IOException {
         String description = geminiService.generateMovieDescription(movie.getTitle());
         double imdbRating = geminiService.generateGeminiRating(movie.getTitle());
+        String movieLead = geminiService.generateMovieLead(movie.getTitle());
         movie.setDescription(description);
         movie.setImdbRating(imdbRating);
+        movie.setMovieLead(movieLead);
         return movieRepository.save(movie);
     }
 
